@@ -1,0 +1,118 @@
+.radio-input input {
+  display: none; /* Hide the radio input */
+}
+
+.Quiz {
+  margin-top: 150px; /* Maintain your desired top margin */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto; /* Set to auto to allow flexbox to handle height */
+}
+
+.radio-input {
+  padding: 12px; /* Add padding */
+  background: #fff;
+  color: #000;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Adjust shadow */
+  width: 320px; /* Set width */
+}
+
+.info {
+  margin-bottom: 10px; /* Spacing */
+}
+
+.question {
+  color: rgb(49, 49, 49);
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: 800;
+}
+
+.steps {
+  background-color: rgb(0, 0, 0);
+  padding: 4px;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 600;
+}
+
+.radio-input label {
+  display: flex;
+  padding: 14px; /* Padding for labels */
+  margin: 8px 0 0; /* Margin */
+  font-size: 13px; /* Font size */
+  font-weight: 600; /* Font weight */
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor */
+  border: 1px solid rgba(187, 187, 187, 0.164); /* Border */
+  color: #000; /* Text color */
+  transition: background-color 0.3s ease, border 0.3s ease; /* Transition for hover */
+}
+
+.radio-input label:hover {
+  background-color: rgba(24, 24, 24, 0.13); /* Hover effect */
+  border: 1px solid #bbb; /* Change border on hover */
+}
+.radio-input input {
+  display: none; /* Hide the radio input */
+}
+
+.Quiz {
+  margin-top: 150px; /* Maintain your desired top margin */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto; /* Set to auto to allow flexbox to handle height */
+}
+
+.radio-input {
+  padding: 12px; /* Add padding */
+  background: #fff;
+  color: #000;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Adjust shadow */
+  width: 320px; /* Set width */
+}
+
+.info {
+  margin-bottom: 10px; /* Spacing */
+}
+
+.question {
+  color: rgb(49, 49, 49);
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: 800;
+}
+
+.steps {
+  background-color: rgb(0, 0, 0);
+  padding: 4px;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 600;
+}
+
+.radio-input label {
+  display: flex;
+  padding: 14px; /* Padding for labels */
+  margin: 8px 0 0; /* Margin */
+  font-size: 13px; /* Font size */
+  font-weight: 600; /* Font weight */
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor */
+  border: 1px solid rgba(187, 187, 187, 0.164); /* Border */
+  color: #000; /* Text color */
+  transition: background-color 0.3s ease, border 0.3s ease; /* Transition for hover */
+}
+
+.radio-input label:hover {
+  background-color: rgba(24, 24, 24, 0.13); /* Hover effect */
+  border: 1px solid #bbb; /* Change border on hover */
+}

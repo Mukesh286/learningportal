@@ -1,0 +1,180 @@
+.reg-body {
+  display: flex;
+  justify-content: center;
+  /*align-items: center; */
+  height: auto;
+  background-color: rgb(232, 228, 102);
+  margin-top: 100px;
+}
+
+.reg-wrapper {
+  --input-focus: #2d8cf0;
+  --font-color: #323232;
+  --font-color-sub: #666;
+  --bg-color: #fff;
+  --main-color: #323232;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reg-flip-card__inner {
+  width: 300px;
+  height: auto;
+  position: relative;
+  background-color: transparent;
+  perspective: 1000px;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.reg-flip-card__front {
+  padding: 20px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  backface-visibility: hidden;
+  background: lightgrey;
+  gap: 20px;
+  border-radius: 5px;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+}
+
+.reg-flip-card__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.reg-title {
+  margin: 20px 0;
+  font-size: 25px;
+  font-weight: 900;
+  text-align: center;
+  color: var(--main-color);
+}
+
+.reg-flip-card__input {
+  width: 250px;
+  height: 40px;
+  border-radius: 5px;
+  border: 2px solid var(--main-color);
+  background-color: var(--bg-color);
+  box-shadow: 4px 4px var(--main-color);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--font-color);
+  padding: 5px 10px;
+  outline: none;
+}
+
+.reg-flip-card__input::placeholder {
+  color: var(--font-color-sub);
+  opacity: 0.8;
+}
+
+.reg-flip-card__input:focus {
+  border: 2px solid var(--input-focus);
+}
+
+.reg-flip-card__btn {
+  margin: 20px 0;
+  width: 120px;
+  height: 40px;
+  border-radius: 5px;
+  border: 2px solid var(--main-color);
+  background-color: var(--bg-color);
+  box-shadow: 4px 4px var(--main-color);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--font-color);
+  cursor: pointer;
+  display: flex; /* Flexbox for centering */
+  justify-content: center; /* Center text inside button */
+  align-items: center; /* Center text vertically */
+  margin-left: auto; /* Center the button */
+  margin-right: auto; /* Center the button */
+}
+
+.reg-flip-card__btn:active {
+  box-shadow: 0 0 var(--main-color);
+  transform: translate(3px, 3px);
+}
+
+/* Radio Button */
+.reg-radio-input {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between radio button labels */
+  margin: 20px 0; /* Margin for the entire container */
+}
+
+.reg-label {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  gap: 10px; /* Space between radio button and text */
+  padding: 10px 15px; /* Padding around label */
+  border: 2px solid #e0e0e0; /* Light border for the label */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #f9f9f9; /* Light background color */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s, border-color 0.3s; /* Smooth transitions */
+}
+
+.reg-label:hover {
+  background-color: #eaeaea; /* Background color on hover */
+  border-color: #b0b0b0; /* Darker border on hover */
+}
+
+.reg-label:has(input:checked) {
+  background-color: #3b2400; /* Dark background when checked */
+  border-color: #fff; /* White border when checked */
+}
+
+.reg-text {
+  color: #000; /* Default text color */
+  font-size: 16px; /* Font size for the text */
+  font-weight: 600; /* Bold text */
+  transition: color 0.3s; /* Smooth transition for color */
+}
+
+.reg-label:has(input:checked) .reg-text {
+  color: #fff; /* Change text color to white when checked */
+}
+
+.reg-radio {
+  appearance: none; /* Remove default styling */
+  width: 20px; /* Width of radio button */
+  height: 20px; /* Height of radio button */
+  border-radius: 50%; /* Round shape */
+  border: 2px solid #3b2400; /* Border color for the radio button */
+  position: relative; /* Positioning for the inner circle */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: background-color 0.2s, border-color 0.2s; /* Smooth transitions */
+}
+
+.reg-radio:checked {
+  background-color: #e4941b; /* Background color when checked */
+}
+
+.reg-radio:checked::after {
+  content: ""; /* Inner circle */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px; /* Inner circle width */
+  height: 10px; /* Inner circle height */
+  border-radius: 50%; /* Round shape */
+  background-color: #fff; /* Inner circle color */
+  transform: translate(-50%, -50%); /* Center the inner circle */
+}
+
+@media (hover: hover) {
+  .reg-label:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Shadow effect on hover */
+  }
+}
