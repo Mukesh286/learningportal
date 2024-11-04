@@ -65,6 +65,7 @@ const EditQuiz = () => {
         <h1 className="text-2xl font-bold mb-4">Edit Quiz</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
+            <p className="block text-sm font-medium text-gray-700">Question:</p>
             <input
               type="text"
               placeholder="Question"
@@ -78,6 +79,9 @@ const EditQuiz = () => {
           </div>
           {questionData.options.map((option, index) => (
             <div className="mb-4" key={index}>
+              <p className="block text-sm font-medium text-gray-700">
+                Option {index + 1}:
+              </p>
               <input
                 type="text"
                 placeholder={`Option ${index + 1}`}
