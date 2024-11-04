@@ -149,7 +149,8 @@
 }
 
 .collegehomeCard:hover .collegeimg {
-  scale: 0;
+  /* scale: 0; */
+  transform: scale(0);
 }
 
 .collegehomeCarddescription {
