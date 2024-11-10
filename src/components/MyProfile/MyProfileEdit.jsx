@@ -96,83 +96,191 @@ function MyProfileEdit() {
 
         {userRole === "student" && (
           <>
-            <input
-              className="border border-gray-300 p-2 mb-4 w-full rounded"
-              placeholder="First Name..."
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-            />
-            <input
-              className="border border-gray-300 p-2 mb-4 w-full rounded"
-              placeholder="Last Name..."
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-            />
-            <input
-              className="border border-gray-300 p-2 mb-4 w-full rounded"
-              placeholder="Mobile Number..."
-              value={mobileNumber}
-              onChange={(e) => setMobileNumber(e.target.value)}
-            />
-            <input
-              className="border border-gray-300 p-2 mb-4 w-full rounded"
-              placeholder="Email..."
-              value={email}
-              readOnly
-            />
-            <input
-              className="border border-gray-300 p-2 mb-4 w-full rounded"
-              placeholder="Address..."
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-            />
-            <input
-              className="border border-gray-300 p-2 mb-4 w-full rounded"
-              placeholder="Zip Code..."
-              value={zipCode}
-              onChange={(e) => setZipCode(e.target.value)}
-            />
+            <div className="mb-4">
+              <label
+                htmlFor="firstName"
+                className="block text-sm font-medium text-gray-700"
+              >
+                First Name:
+              </label>
+              <input
+                id="firstName"
+                className="border border-gray-300 p-2 w-full rounded"
+                placeholder="First Name..."
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+              />
+            </div>
+
+            <div className="mb-4">
+              <label
+                htmlFor="lastName"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Last Name:
+              </label>
+              <input
+                id="lastName"
+                className="border border-gray-300 p-2 w-full rounded"
+                placeholder="Last Name..."
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+              />
+            </div>
+
+            <div className="mb-4">
+              <label
+                htmlFor="mobileNumber"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Mobile Number:
+              </label>
+              <input
+                id="mobileNumber"
+                className="border border-gray-300 p-2 w-full rounded"
+                placeholder="Mobile Number..."
+                value={mobileNumber}
+                onChange={(e) => setMobileNumber(e.target.value)}
+              />
+            </div>
+
+            <div className="mb-4">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Email:
+              </label>
+              <input
+                id="email"
+                className="border border-gray-300 p-2 w-full rounded"
+                placeholder="Email..."
+                value={email}
+                readOnly
+              />
+            </div>
+
+            <div className="mb-4">
+              <label
+                htmlFor="address"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Address:
+              </label>
+              <input
+                id="address"
+                className="border border-gray-300 p-2 w-full rounded"
+                placeholder="Address..."
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+              />
+            </div>
+
+            <div className="mb-4">
+              <label
+                htmlFor="zipCode"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Zip Code:
+              </label>
+              <input
+                id="zipCode"
+                className="border border-gray-300 p-2 w-full rounded"
+                placeholder="Zip Code..."
+                value={zipCode}
+                onChange={(e) => setZipCode(e.target.value)}
+              />
+            </div>
           </>
         )}
 
         {userRole === "college" && (
           <>
-            <input
-              className="border border-gray-300 p-2 mb-4 w-full rounded"
-              placeholder="College Name..."
-              value={collegeName}
-              onChange={(e) => setCollegeName(e.target.value)}
-            />
-            <input
-              className="border border-gray-300 p-2 mb-4 w-full rounded"
-              placeholder="Mobile Number..."
-              value={mobileNumber}
-              onChange={(e) => setMobileNumber(e.target.value)}
-            />
-            <input
-              className="border border-gray-300 p-2 mb-4 w-full rounded"
-              placeholder="Address..."
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-            />
-            <input
-              className="border border-gray-300 p-2 mb-4 w-full rounded"
-              placeholder="Zip Code..."
-              value={zipCode}
-              onChange={(e) => setZipCode(e.target.value)}
-            />
-            <input
-              className="border border-gray-300 p-2 mb-4 w-full rounded"
-              placeholder="Email..."
-              value={email}
-              readOnly
-            />
+            <div className="mb-4">
+              <label
+                htmlFor="collegeName"
+                className="block text-sm font-medium text-gray-700"
+              >
+                College Name:
+              </label>
+              <input
+                id="collegeName"
+                className="border border-gray-300 p-2 w-full rounded"
+                placeholder="College Name..."
+                value={collegeName}
+                onChange={(e) => setCollegeName(e.target.value)}
+              />
+            </div>
+
+            <div className="mb-4">
+              <label
+                htmlFor="mobileNumber"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Mobile Number:
+              </label>
+              <input
+                id="mobileNumber"
+                className="border border-gray-300 p-2 w-full rounded"
+                placeholder="Mobile Number..."
+                value={mobileNumber}
+                onChange={(e) => setMobileNumber(e.target.value)}
+              />
+            </div>
+
+            <div className="mb-4">
+              <label
+                htmlFor="address"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Address:
+              </label>
+              <input
+                id="address"
+                className="border border-gray-300 p-2 w-full rounded"
+                placeholder="Address..."
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+              />
+            </div>
+
+            <div className="mb-4">
+              <label
+                htmlFor="zipCode"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Zip Code:
+              </label>
+              <input
+                id="zipCode"
+                className="border border-gray-300 p-2 w-full rounded"
+                placeholder="Zip Code..."
+                value={zipCode}
+                onChange={(e) => setZipCode(e.target.value)}
+              />
+            </div>
+
+            <div className="mb-4">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Email:
+              </label>
+              <input
+                id="email"
+                className="border border-gray-300 p-2 w-full rounded"
+                placeholder="Email..."
+                value={email}
+                readOnly
+              />
+            </div>
           </>
         )}
 
         <button
           onClick={handleUpdate}
-          className="w-full bg-[#58b0e0] text-white font-semibold rounded-md p-2 hover:bg-[#3b8cbf] transition duration-300"
+          className="w-full bg-[#58b0e0] text-gray-900 font-semibold rounded-md p-2 hover:bg-[#3b8cbf] transition duration-300"
         >
           Update Profile
         </button>

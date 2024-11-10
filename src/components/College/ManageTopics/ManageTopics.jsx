@@ -86,13 +86,13 @@ const ManageTopics = () => {
                   <td className="py-2 px-4 border-b">
                     <button
                       onClick={() => handleEditTopicClick(topic.id)}
-                      className="bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-600 mr-2"
+                      className="bg-blue-600 text-white py-1 px-3 rounded hover:bg-blue-800 mr-2"
                     >
                       Edit
                     </button>
                     <button
                       onClick={() => handleDeleteTopic(topic.id)}
-                      className="bg-red-500 text-white py-1 px-3 rounded hover:bg-red-600"
+                      className="bg-red-600 text-white py-1 px-3 rounded hover:bg-red-800"
                     >
                       Delete
                     </button>

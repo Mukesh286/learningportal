@@ -86,13 +86,13 @@ const ManageQuizzes = () => {
                 <div className="mt-2">
                   <button
                     onClick={() => handleEdit(question)}
-                    className="bg-blue-500 text-white py-1 px-3 rounded mr-2 hover:bg-blue-600"
+                    className="bg-blue-700 text-white py-1 px-3 rounded mr-2 hover:bg-blue-800"
                   >
                     Edit
                   </button>
                   <button
                     onClick={() => handleDelete(question.id)}
-                    className="bg-red-500 text-white py-1 px-3 rounded hover:bg-red-600"
+                    className="bg-red-700 text-white py-1 px-3 rounded hover:bg-red-800"
                   >
                     Delete
                   </button>

@@ -86,13 +86,13 @@ const ManageCourses = () => {
                   <td className="border-t py-3 px-4">
                     <button
                       onClick={() => handleEditCourseClick(course.id)}
-                      className="mr-2 px-2 py-1 bg-yellow-500 text-white font-semibold rounded-lg hover:bg-yellow-600 transition duration-200"
+                      className="mr-2 px-2 py-1 bg-yellow-500 text-grey font-semibold rounded-lg hover:bg-yellow-600 transition duration-200"
                     >
                       Edit
                     </button>
                     <button
                       onClick={() => handleDeleteCourseClick(course.id)}
-                      className="px-2 py-1 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition duration-200"
+                      className="px-2 py-1 bg-red-500 text-grey font-semibold rounded-lg hover:bg-red-600 transition duration-200"
                     >
                       Delete
                     </button>

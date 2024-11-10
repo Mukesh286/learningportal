@@ -1,31 +1,30 @@
-// src/components/Home.js
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
-import { db } from "../../../firebase-config"; // Import your Firebase configuration
-import { collection, getDocs } from "firebase/firestore"; // Import Firestore functions
+import { useNavigate } from "react-router-dom";
+import { db } from "../../../firebase-config";
+import { collection, getDocs } from "firebase/firestore";
 import "./Home.css";
 
 const Home = () => {
-  const navigate = useNavigate(); // Initialize useNavigate
-  const [courses, setCourses] = useState([]); // State for storing courses
-  const [loading, setLoading] = useState(true); // State for loading indicator
-  const [error, setError] = useState(null); // State for error handling
+  const navigate = useNavigate();
+  const [courses, setCourses] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const coursesRef = collection(db, "courses"); // Reference to the courses collection
+        const coursesRef = collection(db, "courses");
         const querySnapshot = await getDocs(coursesRef);
         const fetchedCourses = querySnapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
         }));
-        setCourses(fetchedCourses); // Update state with fetched courses
+        setCourses(fetchedCourses);
       } catch (err) {
         console.error("Error fetching courses:", err);
         setError("Failed to load courses.");
       } finally {
-        setLoading(false); // Set loading to false once data is fetched
+        setLoading(false);
       }
     };
 
@@ -33,51 +32,57 @@ const Home = () => {
   }, []);
 
   const handleCardClick = (courseId) => {
-    navigate(`/home/course/${courseId}`); // Navigate to the course page
+    navigate(`/home/course/${courseId}`);
   };
 
   if (loading) {
     return (
       <div className="loader-container">
-        <div class="loading-wrapper">
-          <div class="loading-circle"></div>
-          <div class="loading-circle"></div>
-          <div class="loading-circle"></div>
-          <div class="loading-shadow"></div>
-          <div class="loading-shadow"></div>
-          <div class="loading-shadow"></div>
+        <div className="loading-wrapper">
+          <div className="loading-circle"></div>
+          <div className="loading-circle"></div>
+          <div className="loading-circle"></div>
         </div>
       </div>
     );
   }
 
   if (error) {
-    return <p style={{ color: "red" }}>{error}</p>; // Show error message if fetching fails
+    return <p style={{ color: "red" }}>{error}</p>;
   }
 
   return (
     <div className="homeBody">
       <h1 className="homeH1">Courses</h1>
+      <h2 className="visually-hidden">Available Courses</h2>{" "}
+      {/* Proper heading for the course section */}
       <div className="homeCardContainer">
         {courses.map((course) => (
           <div
             className="homeCard"
             key={course.id}
-            onClick={() => handleCardClick(course.id)} // Add click handler
-            style={{ cursor: "pointer" }} // Change cursor on hover
+            onClick={() => handleCardClick(course.id)}
+            style={{ cursor: "pointer" }}
+            aria-label={`Go to ${course.name} details`} // Accessible label for screen readers
           >
             <img
               src={course.image || "https://via.placeholder.com/150"}
-              alt={course.name}
+              alt={course.name || "Course image"} // Ensure alt text is meaningful
               className="homeCourseimage"
             />
-            <div class="homeCardcontent">
-              <p class="homeCardtitle">{course.name}</p>
-              <p class="homeCarddescription">{course.description}</p>
+            <div className="homeCardcontent">
+              <p className="homeCardtitle">{course.name}</p>
+              <p className="homeCarddescription">{course.description}</p>
             </div>
           </div>
         ))}
       </div>
+      <noscript>
+        <p>
+          This website requires JavaScript to function correctly. Please enable
+          JavaScript in your browser.
+        </p>
+      </noscript>
     </div>
   );
 };

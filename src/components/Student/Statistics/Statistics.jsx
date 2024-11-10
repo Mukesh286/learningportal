@@ -131,12 +131,13 @@ const Statistics = () => {
                           <td
                             className={`py-3 px-4 border-b ${
                               status === "Pass"
-                                ? "text-green-600"
-                                : "text-red-600"
+                                ? "text-green-800"
+                                : "text-red-800"
                             }`}
                           >
                             {status}
                           </td>
+
                           <td className="py-3 px-4 border-b">
                             <button
                               onClick={() => handleDetailsClick(stat)}

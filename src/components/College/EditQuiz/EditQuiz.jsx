@@ -64,9 +64,16 @@ const EditQuiz = () => {
       <div className="p-6 max-w-lg mx-auto bg-white rounded-lg shadow-md">
         <h1 className="text-2xl font-bold mb-4">Edit Quiz</h1>
         <form onSubmit={handleSubmit}>
+          {/* Question Input */}
           <div className="mb-4">
-            <p className="block text-sm font-medium text-gray-700">Question:</p>
+            <label
+              htmlFor="question"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Question:
+            </label>
             <input
+              id="question"
               type="text"
               placeholder="Question"
               value={questionData.question}
@@ -77,12 +84,18 @@ const EditQuiz = () => {
               className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500"
             />
           </div>
+
+          {/* Options Inputs */}
           {questionData.options.map((option, index) => (
             <div className="mb-4" key={index}>
-              <p className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor={`option${index}`}
+                className="block text-sm font-medium text-gray-700"
+              >
                 Option {index + 1}:
-              </p>
+              </label>
               <input
+                id={`option${index}`}
                 type="text"
                 placeholder={`Option ${index + 1}`}
                 value={option}
@@ -92,28 +105,38 @@ const EditQuiz = () => {
               />
             </div>
           ))}
+
+          {/* Correct Answer Input */}
           <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="answer"
+              className="block text-sm font-medium text-gray-700"
+            >
               Correct Answer Index:
-              <input
-                type="number"
-                min="0"
-                max="3"
-                value={questionData.answer}
-                onChange={(e) =>
-                  setQuestionData({
-                    ...questionData,
-                    answer: Number(e.target.value),
-                  })
-                }
-                required
-                className="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500"
-              />
             </label>
+            <input
+              id="answer"
+              type="number"
+              min="0"
+              max="3"
+              value={questionData.answer}
+              onChange={(e) =>
+                setQuestionData({
+                  ...questionData,
+                  answer: Number(e.target.value),
+                })
+              }
+              required
+              className="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500"
+            />
+            <p className="text-sm text-gray-600 mt-1">
+              index 0: a, index 1: b, index 2: c, index 3: d
+            </p>
           </div>
+
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-200"
+            className="w-full bg-blue-700 text-white py-2 rounded-md hover:bg-blue-800 transition duration-200"
           >
             Update Quiz
           </button>

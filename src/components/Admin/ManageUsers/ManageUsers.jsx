@@ -88,13 +88,13 @@ const ManageUsers = () => {
                   <td className="py-3 px-4 flex space-x-2">
                     <button
                       onClick={() => handleEditClick(student.id)}
-                      className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
+                      className="bg-blue-700 text-white px-3 py-1 rounded hover:bg-blue-800"
                     >
                       Edit
                     </button>
                     <button
                       onClick={() => handleDeleteClick(student.id)}
-                      className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
+                      className="bg-red-700 text-white px-3 py-1 rounded hover:bg-red-800"
                     >
                       Delete
                     </button>

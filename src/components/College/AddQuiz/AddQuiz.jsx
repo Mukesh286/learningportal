@@ -46,47 +46,77 @@ const AddQuiz = () => {
       <div className="p-6 max-w-lg mx-auto bg-white rounded-lg shadow-md">
         <h1 className="text-2xl font-bold mb-4">Add New Quiz</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
-          <input
-            type="text"
-            placeholder="Question"
-            value={question}
-            onChange={(e) => setQuestion(e.target.value)}
-            required
-            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500"
-          />
-          {options.map((option, index) => (
+          {/* Question Input */}
+          <div>
+            <label
+              htmlFor="question"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
+              Question:
+            </label>
             <input
-              key={index}
+              id="question"
               type="text"
-              placeholder={`Option ${index + 1}`}
-              value={option}
-              onChange={(e) => handleOptionChange(index, e.target.value)}
+              placeholder="Enter the question"
+              value={question}
+              onChange={(e) => setQuestion(e.target.value)}
               required
               className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500"
             />
-          ))}
-          <div>
-            <label className="block mb-1">
-              Correct Answer Index:
+          </div>
+
+          {/* Option Inputs */}
+          {options.map((option, index) => (
+            <div key={index}>
+              <label
+                htmlFor={`option${index}`}
+                className="block text-sm font-medium text-gray-700 mb-1"
+              >
+                Option {index + 1}:
+              </label>
               <input
-                type="number"
-                min="0"
-                max="3"
-                value={answer}
-                onChange={(e) => setAnswer(Number(e.target.value))}
+                id={`option${index}`}
+                type="text"
+                placeholder={`Option ${index + 1}`}
+                value={option}
+                onChange={(e) => handleOptionChange(index, e.target.value)}
                 required
                 className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500"
               />
+            </div>
+          ))}
+
+          {/* Correct Answer Input */}
+          <div>
+            <label
+              htmlFor="answer"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
+              Correct Answer Index:
             </label>
-            <p>index 0: a, index 1: b, index 2: c, index 3: d</p>
+            <input
+              id="answer"
+              type="number"
+              min="0"
+              max="3"
+              value={answer}
+              onChange={(e) => setAnswer(Number(e.target.value))}
+              required
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500"
+            />
+            <p className="text-sm text-gray-600 mt-1">
+              index 0: a, index 1: b, index 2: c, index 3: d
+            </p>
           </div>
+
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-200"
+            className="w-full bg-blue-700 text-white py-2 rounded-md hover:bg-blue-800 transition duration-200"
           >
             Add Quiz
           </button>
         </form>
+
         <button
           onClick={handleManageQuizClick}
           className="mt-4 w-full bg-gray-300 text-gray-700 py-2 rounded-md hover:bg-gray-400 transition duration-200"

@@ -67,13 +67,13 @@ const ManageColleges = () => {
                   <td className="py-3 px-4">{college.mobileNumber}</td>
                   <td className="py-3 px-4 flex space-x-2">
                     <Link to={`/manage-colleges/edit/${college.id}`}>
-                      <button className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">
+                      <button className="bg-blue-700 text-white px-3 py-1 rounded hover:bg-blue-800">
                         Edit
                       </button>
                     </Link>
                     <button
                       onClick={() => handleDelete(college.id)}
-                      className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
+                      className="bg-red-700 text-white px-3 py-1 rounded hover:bg-red-800"
                     >
                       Delete
                     </button>

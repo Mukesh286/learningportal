@@ -56,130 +56,192 @@ const Register = () => {
 
   return (
     <div className="reg-body">
-      <div class="reg-wrapper">
-        <div class="reg-flip-card__inner">
-          <div class="reg-flip-card__front">
-            <div class="reg-title">Register</div>
-            <div class="reg-flip-card__form">
+      <div className="reg-wrapper">
+        <div className="reg-flip-card__inner">
+          <div className="reg-flip-card__front">
+            <h1 className="visually-hidden">Register for an Account</h1>{" "}
+            {/* First level heading */}
+            <div className="reg-title">Register</div>
+            <div className="reg-flip-card__form">
               <div className="reg-radio-input">
-                <label className="reg-label">
-                  <input
-                    type="radio"
-                    id="reg-value-1"
-                    checked={isStudent}
-                    onChange={() => setIsStudent(true)}
-                    name="reg-value-radio"
-                    value="value-1"
-                    className="reg-radio"
-                  />
-                  <p className="reg-text">Student</p>
-                </label>
-                <label className="reg-label">
-                  <input
-                    type="radio"
-                    id="reg-value-2"
-                    checked={!isStudent}
-                    onChange={() => setIsStudent(false)}
-                    name="reg-value-radio"
-                    value="value-2"
-                    className="reg-radio"
-                  />
-                  <p className="reg-text">College</p>
-                </label>
+                <ul>
+                  <li>
+                    <label htmlFor="studentRadio" className="reg-label">
+                      <input
+                        type="radio"
+                        id="studentRadio"
+                        checked={isStudent}
+                        onChange={() => setIsStudent(true)}
+                        name="reg-value-radio"
+                        value="value-1"
+                        className="reg-radio"
+                      />
+                      <p className="reg-text">Student</p>
+                    </label>
+                  </li>
+                  <li>
+                    <label htmlFor="collegeRadio" className="reg-label">
+                      <input
+                        type="radio"
+                        id="collegeRadio"
+                        checked={!isStudent}
+                        onChange={() => setIsStudent(false)}
+                        name="reg-value-radio"
+                        value="value-2"
+                        className="reg-radio"
+                      />
+                      <p className="reg-text">College</p>
+                    </label>
+                  </li>
+                </ul>
               </div>
             </div>
-
+            {/* Conditionally render First Name and Last Name for students */}
             {isStudent && (
               <>
+                <label htmlFor="firstName" className="visually-hidden">
+                  First Name
+                </label>
                 <input
                   type="text"
+                  id="firstName"
                   placeholder="First Name"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
-                  class="reg-flip-card__input"
+                  className="reg-flip-card__input"
                   required
                 />
+                <label htmlFor="lastName" className="visually-hidden">
+                  Last Name
+                </label>
                 <input
                   type="text"
+                  id="lastName"
                   placeholder="Last Name"
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
-                  class="reg-flip-card__input"
+                  className="reg-flip-card__input"
                   required
                 />
               </>
             )}
-
+            {/* College Name */}
+            <label htmlFor="collegeName" className="visually-hidden">
+              College Name
+            </label>
             <input
               type="text"
+              id="collegeName"
               placeholder="College Name"
               value={collegeName}
               onChange={(e) => setCollegeName(e.target.value)}
-              class="reg-flip-card__input"
+              className="reg-flip-card__input"
               required
             />
+            {/* Address */}
+            <label htmlFor="address" className="visually-hidden">
+              Address
+            </label>
             <input
               type="text"
+              id="address"
               placeholder="Address"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
-              class="reg-flip-card__input"
+              className="reg-flip-card__input"
               required
             />
+            {/* Zip Code */}
+            <label htmlFor="zipcode" className="visually-hidden">
+              Zip Code
+            </label>
             <input
               type="text"
+              id="zipcode"
               placeholder="Zip Code"
               value={zipcode}
               onChange={(e) => setZipcode(e.target.value)}
-              class="reg-flip-card__input"
+              className="reg-flip-card__input"
               required
             />
+            {/* Mobile Number */}
+            <label htmlFor="mobileNumber" className="visually-hidden">
+              Mobile Number
+            </label>
             <input
               type="text"
+              id="mobileNumber"
               placeholder="Mobile Number"
               value={mobileNumber}
               onChange={(e) => setMobileNumber(e.target.value)}
-              class="reg-flip-card__input"
+              className="reg-flip-card__input"
               required
             />
+            {/* Email */}
+            <label htmlFor="email" className="visually-hidden">
+              Email
+            </label>
             <input
               type="email"
+              id="email"
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              class="reg-flip-card__input"
+              className="reg-flip-card__input"
               required
             />
+            {/* Password */}
+            <label htmlFor="password" className="visually-hidden">
+              Password
+            </label>
             <input
               type="password"
+              id="password"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              class="reg-flip-card__input"
+              className="reg-flip-card__input"
               required
             />
+            {/* Confirm Password */}
+            <label htmlFor="confirmPassword" className="visually-hidden">
+              Confirm Password
+            </label>
             <input
               type="password"
+              id="confirmPassword"
               placeholder="Confirm Password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
-              class="reg-flip-card__input"
+              className="reg-flip-card__input"
               required
             />
+            {/* Error Message */}
             {error && <p style={{ color: "red" }}>{error}</p>}
-            <button onClick={handleRegister} class="reg-flip-card__btn">
+            {/* Register Button */}
+            <button onClick={handleRegister} className="reg-flip-card__btn">
               Register
             </button>
-            <button
-              class="reg-flip-card__btn"
-              onClick={() => navigate("/login")}
-              style={{ marginTop: "10px" }}
-            >
-              Login
-            </button>
+            {/* Login Button */}
+            <nav>
+              <button
+                className="reg-flip-card__btn"
+                onClick={() => navigate("/login")}
+                style={{ marginTop: "10px" }}
+              >
+                Login
+              </button>
+            </nav>
           </div>
         </div>
       </div>
+
+      {/* Noscript Message */}
+      <noscript>
+        <p>
+          To use this application, JavaScript must be enabled in your browser.
+        </p>
+      </noscript>
     </div>
   );
 };

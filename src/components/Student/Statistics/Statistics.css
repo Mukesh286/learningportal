@@ -1,3 +1,18 @@
 .stat-Body {
   margin-top: 100px;
 }
+
+/* Add these styles to your Statistics.css */
+.status-pass {
+  color: white;
+  background-color: #22c55e; /* Green color */
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+.status-fail {
+  color: white;
+  background-color: #ef4444; /* Red color */
+  padding: 4px 8px;
+  border-radius: 12px;
+}

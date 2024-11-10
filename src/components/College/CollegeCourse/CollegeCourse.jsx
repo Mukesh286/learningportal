@@ -68,7 +68,7 @@ const CollegeCourse = () => {
       <div className="flex items-center justify-between">
         <button
           onClick={handleAddTopicClick}
-          className="college-add-topic-button bg-blue-500 text-white py-2 px-4 rounded mr-2 hover:bg-blue-600 transition"
+          className="college-add-topic-button bg-blue-700 text-white py-2 px-4 rounded mr-2 hover:bg-blue-800 transition"
         >
           Add Topic
         </button>
@@ -78,7 +78,7 @@ const CollegeCourse = () => {
 
         <button
           onClick={handleManageTopicsClick}
-          className="px-4 py-2 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition duration-200"
+          className="px-4 py-2 bg-green-700 text-white font-semibold rounded-lg shadow-md hover:bg-green-800 transition duration-200"
         >
           Manage Topics
         </button>

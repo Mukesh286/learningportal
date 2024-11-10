@@ -49,33 +49,42 @@ const Login = () => {
 
   return (
     <div className="login-body">
-      <div class="login-wrapper">
-        <div class="login-flip-card__inner">
-          <div class="login-flip-card__front">
-            <div class="login-title">Log in</div>
-            <div class="login-flip-card__form">
+      <div className="login-wrapper">
+        <div className="login-flip-card__inner">
+          <div className="login-flip-card__front">
+            <h1 className="visually-hidden">Login to Your Account</h1>
+            <div className="login-title">Log in</div>
+            <div className="login-flip-card__form">
+              <label htmlFor="email" className="visually-hidden">
+                Email
+              </label>
               <input
                 type="email"
+                id="email"
                 placeholder="Email"
-                class="login-flip-card__input"
+                className="login-flip-card__input"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
+              <label htmlFor="password" className="visually-hidden">
+                Password
+              </label>
               <input
                 type="password"
+                id="password"
                 placeholder="Password"
-                class="login-flip-card__input"
+                className="login-flip-card__input"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
               {error && <p style={{ color: "red" }}>{error}</p>}
-              <button onClick={handleLogin} class="login-flip-card__btn">
+              <button onClick={handleLogin} className="login-flip-card__btn">
                 Login
               </button>
               <button
-                class="login-flip-card__btn"
+                className="login-flip-card__btn"
                 onClick={() => navigate("/register")}
                 style={{ marginTop: "10px" }}
               >
@@ -85,6 +94,11 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <noscript>
+        <p>
+          To use this application, JavaScript must be enabled in your browser.
+        </p>
+      </noscript>
     </div>
   );
 };

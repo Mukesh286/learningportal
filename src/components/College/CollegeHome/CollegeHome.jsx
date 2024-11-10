@@ -75,7 +75,7 @@ const CollegeHome = () => {
         <h1 className="collegehomeH1 text-center flex-grow">Courses</h1>
         <button
           onClick={handleManageCourseClick}
-          className="px-4 py-2 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition duration-200"
+          className="px-4 py-2 bg-green-800 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition duration-200"
         >
           Manage Courses
         </button>
